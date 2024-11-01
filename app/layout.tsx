@@ -33,8 +33,8 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div>
-          {/* {session?.user?.email ?? 'NO Currently logged user'} */}
+        {/* <div>
+        
           {session?.user?.email ? (
             <div>
               {session?.user.email} <LogoutBtn />
@@ -42,7 +42,7 @@ export default async function RootLayout({
           ) : (
             'NO Currently logged user'
           )}
-        </div>
+        </div> */}
         {children}
       </body>
     </html>
