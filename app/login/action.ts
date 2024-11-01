@@ -36,5 +36,10 @@ export const LoginWithCredentials = async ({
       password,
       redirect: false,
     });
-  } catch (error) {}
+  } catch (error) {
+    return {
+      error: true,
+      message: 'incorect email or password',
+    };
+  }
 };
