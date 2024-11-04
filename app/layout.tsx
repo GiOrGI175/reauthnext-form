@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import { auth } from '@/auth';
 import LogoutBtn from '@/components/logout-btn/LogoutBtn';
+import { Toaster } from '@/components/ui/toaster';
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
@@ -43,6 +44,7 @@ export default async function RootLayout({
             'NO Currently logged user'
           )}
         </div> */}
+        <Toaster />
         {children}
       </body>
     </html>
