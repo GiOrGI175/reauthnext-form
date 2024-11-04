@@ -32,7 +32,6 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { passwordSchema } from '@/validation/passwordSchema';
-import { passwordResetTokens } from '@/db/schema';
 import { passwordReset } from './action';
 
 const formSchema = z.object({
@@ -54,12 +53,14 @@ export default function PasswordReset() {
   return (
     <main className='flex justify-center items-center min-h-screen'>
       {form.formState.isSubmitSuccessful ? (
-        <Card>
-          <CardTitle>password reset</CardTitle>
-          <CardDescription>
-            if u have acc, u will revice passwprd reset
-            {form.getValues('email')}
-          </CardDescription>
+        <Card className='w-[350px]'>
+          <CardHeader>
+            <CardTitle>Email Sent</CardTitle>
+            <CardDescription>
+              If you have account, you will revice password reset email at{' '}
+              {form.getValues('email')}
+            </CardDescription>
+          </CardHeader>
         </Card>
       ) : (
         <Card className='w-[350px]'>
