@@ -55,8 +55,9 @@ export const passwordReset = async (emailAddress: string) => {
 
   await mailer.sendMail({
     from: 'test@resend.dev',
+    //from: 'test@//chvenisaitis mismarti domein',
     subject: 'your password reset requset',
-    to: { emailAddress },
-    html: `hey, ${emailAddress}! your password reset link <a href=${resetLink}>${resetLink}</a> expire 1 day`,
+    to: emailAddress,
+    html: `Hey , ${emailAddress}! Your password reset link: <a href="${resetLink}">${resetLink}</a> expire in 1 day`,
   });
 };
