@@ -6,6 +6,7 @@ import { passwordResetTokens } from '@/db/passwordResetTokensSchema';
 import { users } from '@/db/userSchema';
 import { randomBytes } from 'crypto';
 import { eq } from 'drizzle-orm';
+import { mailer } from '@/lib/email';
 
 export const passwordReset = async (emailAddress: string) => {
   const session = await auth();
@@ -49,4 +50,6 @@ export const passwordReset = async (emailAddress: string) => {
         tokenExpiry,
       },
     });
+
+  const resetLink = `${process.env.SITE_BASE_URL}/ubdate-password?token=${passwordResetToken}`;
 };
